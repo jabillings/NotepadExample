@@ -1,25 +1,196 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="NotepadExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="To Do" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfh-31-HAd">
+                                <rect key="frame" x="50" y="126" width="221" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="0Xh-yn-NE2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="67"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXP-q0-1Eq">
+                                <rect key="frame" x="57" y="294" width="206" height="50"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Add Task"/>
+                                <connections>
+                                    <segue destination="PKV-hs-BPA" kind="show" id="dTW-pp-efe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-XF-49A">
+                                <rect key="frame" x="57" y="352" width="206" height="50"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="View Tasks"/>
+                                <connections>
+                                    <segue destination="my4-vC-fZ7" kind="show" id="eJE-5n-gKt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7lg-XF-49A" firstAttribute="leading" secondItem="HXP-q0-1Eq" secondAttribute="leading" constant="10" id="2dZ-wx-12b"/>
+                            <constraint firstItem="7lg-XF-49A" firstAttribute="width" secondItem="HXP-q0-1Eq" secondAttribute="width" id="4nP-2v-gET"/>
+                            <constraint firstItem="Rfh-31-HAd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="XAk-eb-3DE"/>
+                            <constraint firstItem="7lg-XF-49A" firstAttribute="width" secondItem="Rfh-31-HAd" secondAttribute="width" id="dCN-l3-7sk"/>
+                            <constraint firstItem="7lg-XF-49A" firstAttribute="centerX" secondItem="Rfh-31-HAd" secondAttribute="centerX" id="mFD-i2-xCp"/>
+                            <constraint firstItem="7lg-XF-49A" firstAttribute="centerX" secondItem="HXP-q0-1Eq" secondAttribute="centerX" id="zUi-hV-ovL"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Add Task View Controller-->
+        <scene sceneID="Sl4-NX-8kX">
+            <objects>
+                <viewController id="PKV-hs-BPA" customClass="AddTaskViewController" customModule="NotepadExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XYv-yB-60S"/>
+                        <viewControllerLayoutGuide type="bottom" id="fGw-AN-HHt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mnB-5u-eEd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Add a Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCH-1n-G9f">
+                                <rect key="frame" x="118" y="37" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPN-7J-CyE">
+                                <rect key="frame" x="71" y="114" width="179" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date to be Completed" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ph2-Z0-UE8">
+                                <rect key="frame" x="71" y="167" width="179" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAC-0K-MlY">
+                                <rect key="frame" x="63" y="342" width="206" height="50"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Done/Cancel"/>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="c4o-wN-xR6"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fEh-gz-d5a">
+                                <rect key="frame" x="69" y="234" width="183" height="29"/>
+                                <segments>
+                                    <segment title="Personal"/>
+                                    <segment title="Work"/>
+                                    <segment title="Other"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVx-Jj-hW7">
+                                <rect key="frame" x="63" y="284" width="206" height="50"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Enter Task"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ph2-Z0-UE8" firstAttribute="centerX" secondItem="wPN-7J-CyE" secondAttribute="centerX" id="X4S-Ut-v5C"/>
+                            <constraint firstItem="Ph2-Z0-UE8" firstAttribute="centerX" secondItem="nCH-1n-G9f" secondAttribute="centerX" id="gN4-wR-8SI"/>
+                            <constraint firstItem="Ph2-Z0-UE8" firstAttribute="centerX" secondItem="wPN-7J-CyE" secondAttribute="centerX" id="hzz-1l-g4g"/>
+                            <constraint firstItem="Ph2-Z0-UE8" firstAttribute="centerX" secondItem="nCH-1n-G9f" secondAttribute="centerX" id="pXP-GX-8vt"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="newTaskCategory" destination="fEh-gz-d5a" id="KvT-Al-GFz"/>
+                        <outlet property="newTaskDate" destination="Ph2-Z0-UE8" id="xpg-MZ-kt3"/>
+                        <outlet property="newTaskEnter" destination="DVx-Jj-hW7" id="rMm-JI-R5p"/>
+                        <outlet property="newTaskName" destination="wPN-7J-CyE" id="fJV-l8-cEN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PTu-b6-pPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="1024"/>
+        </scene>
+        <!--Task Table View Controller-->
+        <scene sceneID="xNH-pi-Ezw">
+            <objects>
+                <tableViewController id="my4-vC-fZ7" customClass="TaskTableViewController" customModule="NotepadExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vMG-R2-wif">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="U14-em-Oc7">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Table View" id="CnF-Sv-EAK">
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="BNZ-fe-IU7">
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="2Sz-Ie-3SB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TaskTableViewCell" textLabel="cMm-Xc-QRs" detailTextLabel="erk-Z7-7ON" style="IBUITableViewCellStyleValue1" id="4EP-f5-ZQn" customClass="TaskTableViewCell" customModule="NotepadExample" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4EP-f5-ZQn" id="iZ5-ne-veN">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cMm-Xc-QRs">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="erk-Z7-7ON">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="taskDate" destination="erk-Z7-7ON" id="9ji-eb-bbH"/>
+                                    <outlet property="taskTitle" destination="cMm-Xc-QRs" id="jI5-hp-fUE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="my4-vC-fZ7" id="vRg-Pj-EeE"/>
+                            <outlet property="delegate" destination="my4-vC-fZ7" id="EpX-8m-ff4"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FuK-al-w3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="309"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="c4o-wN-xR6"/>
+    </inferredMetricsTieBreakers>
 </document>

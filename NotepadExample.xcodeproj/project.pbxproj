@@ -13,6 +13,11 @@
 		31BF78FF1BB8DAAB002ED634 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31BF78FE1BB8DAAB002ED634 /* Images.xcassets */; };
 		31BF79021BB8DAAB002ED634 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BF79001BB8DAAB002ED634 /* LaunchScreen.xib */; };
 		31BF790E1BB8DAAB002ED634 /* NotepadExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF790D1BB8DAAB002ED634 /* NotepadExampleTests.swift */; };
+		31BF791A1BB8E573002ED634 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF79191BB8E573002ED634 /* Task.swift */; };
+		31BF791E1BBB573A002ED634 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF791D1BBB573A002ED634 /* TaskTableViewController.swift */; };
+		31BF79201BBB5A2F002ED634 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF791F1BBB5A2F002ED634 /* TaskTableViewCell.swift */; };
+		31BF79221BBB8379002ED634 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF79211BBB8379002ED634 /* AddTaskViewController.swift */; };
+		31BF79241BBB9682002ED634 /* TaskDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BF79231BBB9682002ED634 /* TaskDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		31BF79071BB8DAAB002ED634 /* NotepadExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotepadExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BF790C1BB8DAAB002ED634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31BF790D1BB8DAAB002ED634 /* NotepadExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadExampleTests.swift; sourceTree = "<group>"; };
+		31BF79191BB8E573002ED634 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		31BF791D1BBB573A002ED634 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		31BF791F1BBB5A2F002ED634 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		31BF79211BBB8379002ED634 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		31BF79231BBB9682002ED634 /* TaskDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +89,12 @@
 			children = (
 				31BF78F71BB8DAAB002ED634 /* AppDelegate.swift */,
 				31BF78F91BB8DAAB002ED634 /* ViewController.swift */,
+				31BF79191BB8E573002ED634 /* Task.swift */,
+				31BF791F1BBB5A2F002ED634 /* TaskTableViewCell.swift */,
 				31BF78FB1BB8DAAB002ED634 /* Main.storyboard */,
+				31BF79211BBB8379002ED634 /* AddTaskViewController.swift */,
+				31BF791D1BBB573A002ED634 /* TaskTableViewController.swift */,
+				31BF79231BBB9682002ED634 /* TaskDataStore.swift */,
 				31BF78FE1BB8DAAB002ED634 /* Images.xcassets */,
 				31BF79001BB8DAAB002ED634 /* LaunchScreen.xib */,
 				31BF78F51BB8DAAB002ED634 /* Supporting Files */,
@@ -213,6 +228,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				31BF78FA1BB8DAAB002ED634 /* ViewController.swift in Sources */,
+				31BF79241BBB9682002ED634 /* TaskDataStore.swift in Sources */,
+				31BF79221BBB8379002ED634 /* AddTaskViewController.swift in Sources */,
+				31BF791E1BBB573A002ED634 /* TaskTableViewController.swift in Sources */,
+				31BF79201BBB5A2F002ED634 /* TaskTableViewCell.swift in Sources */,
+				31BF791A1BB8E573002ED634 /* Task.swift in Sources */,
 				31BF78F81BB8DAAB002ED634 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
